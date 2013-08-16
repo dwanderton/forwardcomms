@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)http://examples.getbootstrap.com/grid/index.html -->
 <html lang="en"><head>
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,9 +27,38 @@
   <script>
   $(function() {
     $( "#accordion" ).accordion({autoHeight: false,heightStyle: "content" });
+    
   });
   </script>
   <!-- end get ac working -->
+  <!--start gmapapi -->
+<style>
+      html, body, #map-canvas {
+        margin: 0;
+        padding: 0;
+      height:100%;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 14,
+    center: new google.maps.LatLng(51.5136, 0.0980),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    </script>
+<!-- end map api-->
   </head>
 
   <body>
@@ -40,6 +68,7 @@
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
           <h2><b>ForwardComms</b></h2>
           <!-- start ac -->
+	     
           <div id="accordion">
                         <h3><b>Our Mission</b></h3>
             <div>
@@ -57,14 +86,19 @@
             <div>
               <p>
               St. Paul's Churchyard</br>London</br>EC4M 8AD 
-              </p>
-	      <iframe width="250" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=St.Pauls'+Cathedral,+London&amp;aq=1&amp;oq=st+pauls&amp;sll=52.8382,-2.327815&amp;sspn=7.994284,18.742676&amp;ie=UTF8&amp;hq=St.Pauls'+Cathedral,+London&amp;t=m&amp;ll=51.513679,-0.09956&amp;spn=0.013888,0.032015&amp;output=embed"></iframe><br /><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=St.Pauls'+Cathedral,+London&amp;aq=1&amp;oq=st+pauls&amp;sll=52.8382,-2.327815&amp;sspn=7.994284,18.742676&amp;ie=UTF8&amp;hq=St.Pauls'+Cathedral,+London&amp;t=m&amp;ll=51.513679,-0.09956&amp;spn=0.013888,0.032015" style="color:#FFFFFF">View Larger Map </a>
-            </div>
+              </p><div style="height: 350px; ">
+	      <div id="map-canvas"></div>
+	      </div>
+	      </div>
             <h3><b>New York</b></h3>
             <div>
               <p>
               Liberty Island</br>New York</br>NY 10004 
               </p>
+	      <div style="height: 350px;">
+	      <div id="map2-canvas"></div>
+	      </div>
+	      
 <iframe width="250" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Liberty+Island,+New+York,+NY,+United+States&amp;aq=0&amp;oq=liberty+islan&amp;sll=51.510452,-0.108147&amp;sspn=0.128632,0.292854&amp;ie=UTF8&amp;hq=Liberty+Island,+New+York,+NY,+United+States&amp;t=m&amp;ll=40.689766,-74.045234&amp;spn=0.005695,0.005364&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Liberty+Island,+New+York,+NY,+United+States&amp;aq=0&amp;oq=liberty+islan&amp;sll=51.510452,-0.108147&amp;sspn=0.128632,0.292854&amp;ie=UTF8&amp;hq=Liberty+Island,+New+York,+NY,+United+States&amp;t=m&amp;ll=40.689766,-74.045234&amp;spn=0.005695,0.005364&amp;z=16&amp;iwloc=A" style="color:#FFFFFF;text-align:left">View Larger Map</a></small>
  </div>
             <h3><b>Portfolio</b></h3>
@@ -102,10 +136,12 @@
 
     </div> <!-- /container -->
 
+ <div id="map-canvas"></div>
 
 <style>.myToolbar {z-index:100000} .myToolbar .tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden}</style><style>.tb_button {padding:2px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}
 
 </style>
+
 
 
 
