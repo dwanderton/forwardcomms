@@ -33,7 +33,12 @@
   <!-- end get ac working -->
   <!--start gmapapi -->
 <style>
-      html, body, #map-canvas {
+      html, body, #map-canvasLDN {
+        margin: 0;
+        padding: 0;
+      height:100%;
+      }
+      html, body, #map-canvasNYC {
         margin: 0;
         padding: 0;
       height:100%;
@@ -41,16 +46,24 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
-var map;
+var mapLDN;
 function initialize() {
-  var mapOptions = {
+  var mapOptionsLDN = {
     zoom: 14,
-    center: new google.maps.LatLng(51.5136, 0.0980),
+    center: new google.maps.LatLng(51.5136, -0.0980),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+  mapLDN = new google.maps.Map(document.getElementById('map-canvasLDN'),
+      mapOptionsLDN);
+
+    var OfficeLDN = new google.maps.Marker(
+    {
+        position: new google.maps.LatLng(51.5136, -0.0980),
+        map: mapLDN,
+        title:"London Office"
+   });
+
 
 }
 
@@ -86,8 +99,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
             <div>
               <p>
               St. Paul's Churchyard</br>London</br>EC4M 8AD 
-              </p><div style="height: 350px; ">
-	      <div id="map-canvas"></div>
+              </p>
+	      <div style="height: 350px; ">
+	      <div id="map-canvasLDN"></div>
 	      </div>
 	      </div>
             <h3><b>New York</b></h3>
@@ -95,9 +109,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
               <p>
               Liberty Island</br>New York</br>NY 10004 
               </p>
-	      
-<iframe width="250" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Liberty+Island,+New+York,+NY,+United+States&amp;aq=0&amp;oq=liberty+islan&amp;sll=51.510452,-0.108147&amp;sspn=0.128632,0.292854&amp;ie=UTF8&amp;hq=Liberty+Island,+New+York,+NY,+United+States&amp;t=m&amp;ll=40.689766,-74.045234&amp;spn=0.005695,0.005364&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Liberty+Island,+New+York,+NY,+United+States&amp;aq=0&amp;oq=liberty+islan&amp;sll=51.510452,-0.108147&amp;sspn=0.128632,0.292854&amp;ie=UTF8&amp;hq=Liberty+Island,+New+York,+NY,+United+States&amp;t=m&amp;ll=40.689766,-74.045234&amp;spn=0.005695,0.005364&amp;z=16&amp;iwloc=A" style="color:#FFFFFF;text-align:left">View Larger Map</a></small>
- </div>
+	      <div style="height: 350px; ">
+	      <div id="map-canvasNYC"></div>
+	      </div>
+	      </div>
             <h3><b>Portfolio</b></h3>
             <div>
               <p>
