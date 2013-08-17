@@ -47,6 +47,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
 var mapLDN;
+var mapNYC;
 function initialize() {
   var mapOptionsLDN = {
     zoom: 18,
@@ -61,6 +62,8 @@ function initialize() {
 
   mapLDN = new google.maps.Map(document.getElementById('map-canvasLDN'),
       mapOptionsLDN);
+
+  mapNYC = new google.maps.Map(document.getElementById('map-canvasNYC'), mapOptionsNYC);
 
     var OfficeLDN = new google.maps.Marker(
     {
