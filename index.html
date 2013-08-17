@@ -49,8 +49,13 @@
 var mapLDN;
 function initialize() {
   var mapOptionsLDN = {
-    zoom: 14,
+    zoom: 18,
     center: new google.maps.LatLng(51.5136, -0.0980),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var mapOptionsNYC = {
+    zoom: 18,
+    center: new google.maps.LatLng(40.6897, -74.0444800000002),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -62,6 +67,12 @@ function initialize() {
         position: new google.maps.LatLng(51.5136, -0.0980),
         map: mapLDN,
         title:"London Office"
+   });
+    var OfficeNYC = new google.maps.Marker(
+    {
+        position: new google.maps.LatLng(40.6897, -74.0444800000002),
+        map: mapNYC,
+        title:"New York Office"
    });
 
 
