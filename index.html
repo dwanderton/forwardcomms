@@ -85,6 +85,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
     </script>
+
+<!--resize screen-->
+<script>
+  $(document).ready(function() {
+  $('h3').click(function() {
+  google.maps.event.trigger(mapLDN, 'resize');
+  mapLDN.setCenter(new google.maps.LatLng(51.5136, -0.0980));
+  google.maps.event.trigger(mapNYC, 'resize');
+  mapNYC.setCenter(new google.maps.LatLng(40.6897, -74.0444800000002));     
+       });
+          });
+</script>
 <!-- end map api-->
   </head>
 
